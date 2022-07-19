@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # 'posts.apps.PostsConfig',
+    'posts.apps.PostsConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -72,7 +72,8 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
+STATICFILES_DIRS = [os.path.join(
+    BASE_DIR, 'frontend/build/static'), os.path.join(BASE_DIR, 'static')]
 
 WSGI_APPLICATION = 'core.wsgi.application'
 

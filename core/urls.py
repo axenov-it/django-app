@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
+from posts import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'posts', views.PostsView, 'posts')
 
 
 urlpatterns = [
-    # path('', include('posts.urls')),
-    # path('', include('frontend.urls')),
-
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
+    path('api/', include(router.urls))
 ]

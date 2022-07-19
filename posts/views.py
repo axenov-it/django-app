@@ -1,7 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.http import JsonResponse
+from .serializers import PostSerializer
+from rest_framework import viewsets
+from .models import Post
 
 
-def post(request, slug):
-    return JsonResponse({'slug': slug})
+class PostsView(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()

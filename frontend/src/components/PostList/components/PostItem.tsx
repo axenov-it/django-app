@@ -10,12 +10,14 @@ interface Props {
   item: PostItemInterface;
 }
 
-export const PostItem = ({ item: { slug, headline, content } }: Props) => (
+export const PostItem = ({
+  item: { slug, headline, content, image },
+}: Props) => (
   <Card sx={{ width: 345 }}>
     <CardMedia
       component="img"
       height="140"
-      image="https://media.4-paws.org/b/e/2/d/be2d88ceb9613ac5066bd11dd950faaf2671bef7/VIER%20PFOTEN_2019-03-15_001-1998x1999-600x600.jpg"
+      image={`static/images/${image}`}
       alt="green iguana"
     />
     <CardContent>

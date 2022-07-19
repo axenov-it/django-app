@@ -1,9 +1,13 @@
+import { Router, Page, Header, ResetStyles } from "components";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello</h1>
-      </header>
+      <ResetStyles />
+      <Header />
+      <Page>
+        <Router />
+      </Page>
     </div>
   );
 }

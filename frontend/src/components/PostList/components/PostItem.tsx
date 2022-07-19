@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -13,11 +15,16 @@ interface Props {
 export const PostItem = ({
   item: { slug, headline, content, image },
 }: Props) => (
-  <Card sx={{ width: 345 }}>
+  <Card
+    css={css`
+      width: 264px;
+      margin: 15px;
+    `}
+  >
     <CardMedia
       component="img"
-      height="140"
-      image={`static/images/${image}`}
+      height="200"
+      image={`static/${image}`}
       alt="green iguana"
     />
     <CardContent>

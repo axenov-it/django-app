@@ -1,18 +1,24 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { usePosts } from "./hooks";
 import { PostItem } from "./components";
-import Stack from "@mui/material/Stack";
+import { Box } from "@mui/material";
 
 export const PostList = () => {
   const posts = usePosts();
 
   return (
-    <Stack
-      direction={{ xs: "column", sm: "row" }}
-      spacing={{ xs: 1, sm: 2, md: 4 }}
+    <Box
+      css={css`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -15px;
+      `}
     >
       {posts.map((post) => (
         <PostItem key={post.id} item={post} />
       ))}
-    </Stack>
+    </Box>
   );
 };

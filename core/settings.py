@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Application definition
 
@@ -73,7 +74,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [os.path.join(
-    BASE_DIR, 'frontend/build/static'), os.path.join(BASE_DIR, 'static')]
+    BASE_DIR, 'frontend/build/static'), os.path.join(BASE_DIR, 'media')]
 
 WSGI_APPLICATION = 'core.wsgi.application'
 

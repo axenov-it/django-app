@@ -9,6 +9,10 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id', 'pub_date', 'headline', 'content',
                   'slug', 'image')
+        lookup_field = 'slug'
+        extra_kwargs = {
+            'url': {'lookup_field': 'slug'}
+        }
 
     image = serializers.SerializerMethodField()
 

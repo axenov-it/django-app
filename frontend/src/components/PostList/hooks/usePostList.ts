@@ -7,7 +7,7 @@ export const usePosts = () => {
   const [posts, setPosts] = useState<PostItemInterface[]>([]);
 
   useEffect(() => {
-    getPosts().then((data) => {
+    getPosts().then((data: PostItemInterface[]) => {
       setPosts(data);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

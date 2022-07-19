@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { PostItemInterface } from "../interfaces";
+import { Link } from "react-router-dom";
 
 interface Props {
   item: PostItemInterface;
@@ -21,12 +22,15 @@ export const PostItem = ({
       margin: 15px;
     `}
   >
-    <CardMedia
-      component="img"
-      height="200"
-      image={`static/${image}`}
-      alt="green iguana"
-    />
+    <Link to={`/${slug}`}>
+      <CardMedia
+        component="img"
+        height="200"
+        image={`static/${image}`}
+        alt="green iguana"
+      />
+    </Link>
+
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
         {headline}
@@ -36,7 +40,9 @@ export const PostItem = ({
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">More</Button>
+      <Link to={`/${slug}`}>
+        <Button size="small">More</Button>
+      </Link>
     </CardActions>
   </Card>
 );

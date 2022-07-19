@@ -4,6 +4,6 @@ import { HomePage, PostPage } from "pages";
 export const Router = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="/posts/:slug" element={<PostPage />} />
+    <Route path="/:slug" element={<PostPage />} />
   </Routes>
 );
